@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Spaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Safe Spaces</a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#share" class="nav-link">Share Thoughts</a>
+                <a href="#support" class="nav-link">Support Groups</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="/profile.html" class="nav-link">My Space</a>
+                <div class="auth-buttons">
+                    <button onclick="showLoginForm()" class="btn btn-secondary">Login</button>
+                    <button onclick="showSignupForm()" class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="home">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Safe Spaces</h1>
+                <p>A secure and anonymous platform where you can freely express your thoughts, feelings, and experiences.</p>
+                <div class="cta-buttons">
+                    <a href="/share" class="btn btn-primary">Share Your Story</a>
+                    <a href="/support-groups" class="btn btn-secondary">Join Support Groups</a>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Anonymous Sharing</h3>
+                    <p>Express yourself freely without revealing your identity</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Supportive Community</h3>
+                    <p>Connect with people who understand and care</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Mental Wellness</h3>
+                    <p>Access resources for emotional well-being</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How Safe Spaces Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Space</h3>
+                    <p>Join our community with complete anonymity</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Share Your Story</h3>
+                    <p>Express yourself in a judgment-free environment</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect & Heal</h3>
+                    <p>Find support from people who understand</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="community-stats">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>10k+</h3>
+                    <p>Community Members</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5k+</</h3>
+                    <p>Stories Shared</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <p>Support Groups</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>Community Voices</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p>"Finding this space helped me realize I'm not alone. The support here is incredible."</p>
+                    <span class="anonymous">Anonymous Member</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"A safe haven where I can express my true feelings without fear of judgment."</p>
+                    <span class="anonymous">Anonymous Member</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="share-thoughts">
+            <div class="container">
+                <h2>Share Your Thoughts</h2>
+                <form id="post-form" class="post-form">
+                    <select name="category" id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="anxiety">Anxiety</option>
+                        <option value="depression">Depression</option>
+                        <option value="relationships">Relationships</option>
+                        <option value="general">General</option>
+                    </select>
+                    <textarea 
+                        name="content" 
+                        id="content" 
+                        placeholder="Share your thoughts anonymously..."
+                        required
+                    ></textarea>
+                    <button type="submit" class="btn btn-primary">Share Anonymously</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="posts">
+            <div class="container">
+                <h2>Community Shares</h2>
+                <div id="posts-container" class="posts-grid">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="support-section">
+            <h2>Support Groups</h2>
+            <div class="support-groups">
+                <div class="group-card">
+                    <h3>Anxiety Support</h3>
+                    <p>Connect with others managing anxiety</p>
+                    <span class="members">150+ members</span>
+                    <button class="btn btn-primary">Join Group</button>
+                </div>
+                <div class="group-card">
+                    <h3>Depression Support</h3>
+                    <p>Share and heal together</p>
+                    <span class="members">200+ members</span>
+                    <button class="btn btn-primary">Join Group</button>
+                </div>
+                <div class="group-card">
+                    <h3>Relationship Support</h3>
+                    <p>Navigate relationships together</p>
+                    <span class="members">100+ members</span>
+                    <button class="btn btn-primary">Join Group</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="resources-section">
+            <h2>Mental Health Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Self-Help Guides</h3>
+                    <p>Access free mental wellness guides</p>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Helplines</h3>
+                    <p>24/7 support when you need it</p>
+                    <a href="#" class="btn btn-secondary">View Numbers</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Find Therapists</h3>
+                    <p>Connect with mental health professionals</p>
+                    <a href="#" class="btn btn-secondary">Search Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="profile-section">
+            <h2>My Safe Space</h2>
+            <div class="profile-container">
+                <div class="profile-stats">
+                    <div class="stat">
+                        <h3>My Posts</h3>
+                        <p>5 shared thoughts</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Support Given</h3>
+                        <p>12 reactions</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Groups Joined</h3>
+                        <p>3 communities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Safe Spaces</h3>
+                <p>A supportive community where you can share and heal together.</p>
+                <div class="social-links">
+                    <a href="#" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Join us on Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/guidelines">Community Guidelines</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/help">Help Center</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/resources">Mental Health Resources</a></li>
+                    <li><a href="/crisis">Crisis Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Emergency Support</h4>
+                <p class="emergency-info">If you're in crisis, please reach out:</p>
+                <p class="emergency-contact">24/7 Crisis Line: 988</p>
+                <a href="/emergency" class="btn btn-secondary">Get Immediate Help</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Safe Spaces. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

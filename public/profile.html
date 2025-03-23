@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Safe Spaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Safe Spaces</a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#share" class="nav-link">Share</a>
+                <a href="/#support" class="nav-link">Support</a>
+                <a href="/#resources" class="nav-link">Resources</a>
+                <div class="user-menu">
+                    <span id="navUsername" class="username"></span>
+                   
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="profile-page">
+        <div class="profile-header">
+            <div class="profile-cover">
+               
+            </div>
+            <div class="profile-info">
+                <div class="profile-main">
+                    <div class="profile-title">
+                        <h1 id="username"></h1>
+                        <button onclick="editUsername()" class="edit-name-btn" title="Edit Username">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                    </div>
+                    <div class="profile-actions">
+                        <button onclick="editProfile()" class="btn btn-secondary">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+                <p id="userBio" class="bio"></p>
+                <div class="profile-meta">
+                    <span><i class="fas fa-calendar"></i> Joined: <span id="joinDate"></span></span>
+                    <span><i class="fas fa-envelope"></i> <span id="userEmail"></span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-navigation">
+                <button class="tab-btn active" data-tab="posts">
+                    <i class="fas fa-pen"></i> My Posts
+                </button>
+                <button class="tab-btn" data-tab="reactions">
+                    <i class="fas fa-heart"></i> My Reactions
+                </button>
+                <button class="tab-btn" data-tab="comments">
+                    <i class="fas fa-comments"></i> My Comments
+                </button>
+                <button class="tab-btn" data-tab="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+
+            <div class="tab-content">
+                <div id="posts" class="tab-pane active">
+                    <div class="section-header">
+                        <h2>My Posts</h2>
+                        <span class="post-count" id="postCount">0 posts</span>
+                    </div>
+                    <div id="userPosts" class="posts-grid"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>
