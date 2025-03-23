@@ -12,7 +12,7 @@ const User = require('./models/User');
 const multer = require('multer');
 
 // Fix MongoDB connection string
-mongoose.connect( process.env.MONGODB_URI, {
+mongoose.connect( process.env.MONGODB_URI || "mongodb+srv://vishu123:vishuatlas112233$@cluster0.6pr2l.mongodb.net/free-space",  {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
